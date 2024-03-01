@@ -18,8 +18,8 @@ def main():
     combined_text = st.text_input("Combine Text"," ")  
     
     if st.button("Predict Category"): 
-        features = [['combined']]
-        data = {'combined':combined}
+        features = [['combined_text']]
+        data = {'combined':combined_text}
         print(data)
         df=pd.DataFrame([list(data.values())], columns=['combined'])
             
