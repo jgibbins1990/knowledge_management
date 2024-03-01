@@ -4,7 +4,6 @@ import streamlit as st
 import pickle
 
 model = pickle.load(open('model.pkl', 'rb'))
-encoder_dict = pickle.load(open('encoder.pkl', 'rb')) 
 cols=['combined']    
   
 def main(): 
