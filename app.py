@@ -7,23 +7,21 @@ model = pickle.load(open('model.pkl', 'rb'))
 cols=['combined']    
   
 def main(): 
-    st.title("Category Predictor")
+    st.title("Knowledge Management")
     html_temp = """
     <div style="background:#025246 ;padding:10px">
-    <h2 style="color:white;text-align:center;">Income Prediction App </h2>
+    <h2 style="color:white;text-align:center;">Category Prediction App </h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html = True)
     
-    combined_text = st.text_input("Combine Text"," ")  
+    combined_text = st.text_input("Combined Text"," ")  
     
     if st.button("Predict Category"): 
-        features = [['combined_text']]
         data = {'combined':combined_text}
-        print(data)
-        df=pd.DataFrame([list(data.values())], columns=['combined'])
+        df=pd.DataFrame(data.values(), columns=['combined'])
             
-        features_list = df.values.tolist()    
+        features_list = df['combined']  
         prediction = model.predict(features_list)
     
         output = int(prediction[0])
