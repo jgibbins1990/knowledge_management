@@ -2,6 +2,9 @@ import numpy as np
 import pandas as pd
 import streamlit as st 
 import pickle
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.pipeline import Pipeline
+from sklearn.svm import LinearSVC
 
 model = pickle.load(open('model.pkl', 'rb'))
 cols=['combined']    
