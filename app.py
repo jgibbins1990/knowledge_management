@@ -29,7 +29,7 @@ def main():
 
         st.success('Predicted Category is {}'.format(output))
 
-  if st.button("Predict Area"): 
+    if st.button("Predict Area"): 
         data = {'combined':combined_text}
         df=pd.DataFrame(data.values(), columns=['combined'])
             
