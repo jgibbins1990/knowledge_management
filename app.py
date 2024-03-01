@@ -24,10 +24,9 @@ def main():
         features_list = df['combined']  
         prediction = model.predict(features_list)
     
-        output = int(prediction[0])
-        text = output
+        output = prediction[0]
 
-        st.success('Predicted Category is {}'.format(text))
+        st.success('Predicted Category is {}'.format(output))
       
 if __name__=='__main__': 
     main() 
