@@ -28,9 +28,11 @@ def main():
           
           features_list = df['combined']  
           predictions = model.predict(features_list)
+          predictions_a = model_a.predict(features_list)
           df['Predicted Category'] = predictions
+          df['Predicted Area'] = predictions_a
 
-          st.dataframe(df, width=1000, height= 1200)
+          st.dataframe(df['Predicted Category','Predicted Area','Title','Change','Summary','Link','Date'], width=2500, height= 1200)
 
     #     st.download_button("Press to Download Predictions", df, 
     #                        "predictions.csv",
