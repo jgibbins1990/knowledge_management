@@ -16,8 +16,10 @@ def main():
     st.markdown(html_temp, unsafe_allow_html = True)
 
     upload_file = st.file_uploader('Upload your csv file')
-    df = pd.read_csv(upload_file)
-    st.dataframe(df, width=1000, height= 200)
+
+    if st.button("View uploaded file"): 
+          df = pd.read_csv(upload_file)
+          st.dataframe(df, width=1000, height= 200)
 
     if st.button("Predict Category Area and Topics"): 
 
