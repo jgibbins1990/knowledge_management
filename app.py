@@ -34,26 +34,8 @@ def main():
 
           st.dataframe(df[['Predicted Category','Predicted Area','Title','Change','Summary','Link','Date']], width=2500, height= 1200)
 
-    #     st.download_button("Press to Download Predictions", df, 
-    #                        "predictions.csv",
-    #                        "text/csv",
-    #                        key='download-csv'
-    #                       )
-
-    # if st.button("Predict Area"): 
-    #     data = {'combined':combined_text}
-    #     df=pd.DataFrame(data.values(), columns=['combined'])
-            
-    #     features_list = df['combined']  
-    #     prediction = model_a.predict(features_list)
-    
-    #     output = prediction[0]
-
-    #     st.success('Predicted Area is {}'.format(output))
 
 
-
-      
 if __name__=='__main__': 
     main() 
     
