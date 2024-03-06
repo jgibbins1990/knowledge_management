@@ -15,6 +15,8 @@ def main():
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html = True)
+
+    upload_file = st.file_uploader('Upload your csv file')
     
     combined_text = st.text_input("Combined Text"," ")  
     
