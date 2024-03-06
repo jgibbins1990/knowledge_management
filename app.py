@@ -36,7 +36,7 @@ def main():
           topics = ['ballot visa youth guidance', 'sponsor register license student', 'sponsor register license worker', 
                                          'document guidance supporting', 'visa late application update' ]
           df['Predicted Topics'] = topics
-          st.dataframe(df[['Predicted Category','Predicted Area','Title','Change','Summary','Date','Link']], width=2500, height= 300)
+          st.dataframe(df[['Predicted Category','Predicted Area','Predicted Topics','Title','Change','Summary','Date','Link']], width=2500, height= 300)
 
 
 
