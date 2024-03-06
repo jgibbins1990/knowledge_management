@@ -22,19 +22,19 @@ def main():
     df['combined'] = df[cols].apply(lambda row: ' '.join(row.values.astype(str)),axis=1)
     st.dataframe(df, width=1000, height= 1200)
 
-    if st.button("Predict Category Area and Topics"): 
+    # if st.button("Predict Category Area and Topics"): 
       
         
       
-        features_list = df['combined']  
-        predictions = model.predict(features_list)
-        df['Predicted Category'] = predictions
+    #     features_list = df['combined']  
+    #     predictions = model.predict(features_list)
+    #     df['Predicted Category'] = predictions
 
-        st.download_button("Press to Download Predictions", df, 
-                           "predictions.csv",
-                           "text/csv",
-                           key='download-csv'
-                          )
+    #     st.download_button("Press to Download Predictions", df, 
+    #                        "predictions.csv",
+    #                        "text/csv",
+    #                        key='download-csv'
+    #                       )
 
     # if st.button("Predict Area"): 
     #     data = {'combined':combined_text}
