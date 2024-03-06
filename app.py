@@ -19,7 +19,7 @@ def main():
 
     if st.button("View uploaded file"): 
           df = pd.read_csv(upload_file)
-          st.dataframe(df, width=1000, height= 200)
+          st.dataframe(df, width=2500, height= 300)
 
     if st.button("Predict Category Area and Topics"): 
 
@@ -33,7 +33,7 @@ def main():
           df['Predicted Category'] = predictions
           df['Predicted Area'] = predictions_a
 
-          st.dataframe(df[['Predicted Category','Predicted Area','Title','Change','Summary','Link','Date']], width=2500, height= 200)
+          st.dataframe(df[['Predicted Category','Predicted Area','Title','Change','Summary','Date','Link']], width=2500, height= 300)
 
 
 
