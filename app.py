@@ -17,18 +17,20 @@ def main():
     st.markdown(html_temp, unsafe_allow_html = True)
 
     upload_file = st.file_uploader('Upload your csv file')
-    df = pd.read_csv(upload_file)
-    cols = ['Title','Summary','Change']
-    df['combined'] = df[cols].apply(lambda row: ' '.join(row.values.astype(str)),axis=1)
-    st.dataframe(df, width=1000, height= 1200)
+    
+    #st.dataframe(df, width=1000, height= 1200)
 
-    # if st.button("Predict Category Area and Topics"): 
-      
-        
-      
-    #     features_list = df['combined']  
-    #     predictions = model.predict(features_list)
-    #     df['Predicted Category'] = predictions
+    if st.button("Predict Category Area and Topics"): 
+
+          df = pd.read_csv(upload_file)
+          cols = ['Title','Summary','Change']
+          df['combined'] = df[cols].apply(lambda row: ' '.join(row.values.astype(str)),axis=1)
+          
+          features_list = df['combined']  
+          predictions = model.predict(features_list)
+          df['Predicted Category'] = predictions
+
+          st.dataframe(df, width=1000, height= 1200)
 
     #     st.download_button("Press to Download Predictions", df, 
     #                        "predictions.csv",
