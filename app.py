@@ -4,8 +4,7 @@ import streamlit as st
 import pickle
 
 model = pickle.load(open('model.pkl', 'rb'))
-model_a = pickle.load(open('model_a.pkl', 'rb'))
-cols=['combined']    
+model_a = pickle.load(open('model_a.pkl', 'rb'))  
   
 def main(): 
     st.title("Knowledge Management")
@@ -17,8 +16,8 @@ def main():
     st.markdown(html_temp, unsafe_allow_html = True)
 
     upload_file = st.file_uploader('Upload your csv file')
-    
-    #st.dataframe(df, width=1000, height= 1200)
+    df = pd.read_csv(upload_file)
+    st.dataframe(df, width=1000, height= 1200)
 
     if st.button("Predict Category Area and Topics"): 
 
