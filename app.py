@@ -27,7 +27,11 @@ def main():
         predictions = model.predict(features_list)
         df['Predicted Category'] = predictions
 
-        
+        st.download_button("Press to Download Predictions", df, 
+                           "predictions.csv",
+                           "text/csv",
+                           key='download-csv'
+                          )
 
     # if st.button("Predict Area"): 
     #     data = {'combined':combined_text}
