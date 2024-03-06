@@ -18,12 +18,12 @@ def main():
 
     upload_file = st.file_uploader('Upload your csv file')
     df = pd.read_csv(upload_file)
+    cols = ['Title','Summary','Change']
     df['combined'] = df[cols].apply(lambda row: ' '.join(row.values.astype(str)),axis=1)
     st.dataframe(df, width=1000, height= 1200)
 
     if st.button("Predict Category Area and Topics"): 
-        
-        cols = ['Title','Summary','Change']
+      
         
       
         features_list = df['combined']  
