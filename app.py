@@ -17,7 +17,7 @@ def main():
 
     upload_file = st.file_uploader('Upload your csv file')
     df = pd.read_csv(upload_file)
-    st.dataframe(df, width=1000, height= 1200)
+    st.dataframe(df, width=1000, height= 200)
 
     if st.button("Predict Category Area and Topics"): 
 
@@ -31,7 +31,7 @@ def main():
           df['Predicted Category'] = predictions
           df['Predicted Area'] = predictions_a
 
-          st.dataframe(df[['Predicted Category','Predicted Area','Title','Change','Summary','Link','Date']], width=2500, height= 1200)
+          st.dataframe(df[['Predicted Category','Predicted Area','Title','Change','Summary','Link','Date']], width=2500, height= 200)
 
 
 
