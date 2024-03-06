@@ -32,7 +32,7 @@ def main():
           df['Predicted Category'] = predictions
           df['Predicted Area'] = predictions_a
 
-          st.dataframe(df['Predicted Category','Predicted Area','Title','Change','Summary','Link','Date'], width=2500, height= 1200)
+          st.dataframe(df[['Predicted Category','Predicted Area','Title','Change','Summary','Link','Date']], width=2500, height= 1200)
 
     #     st.download_button("Press to Download Predictions", df, 
     #                        "predictions.csv",
