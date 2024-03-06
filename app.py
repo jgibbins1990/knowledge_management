@@ -17,30 +17,28 @@ def main():
     st.markdown(html_temp, unsafe_allow_html = True)
 
     upload_file = st.file_uploader('Upload your csv file')
-    
-    combined_text = st.text_input("Combined Text"," ")  
-    
-    if st.button("Predict Category"): 
-        data = {'combined':combined_text}
-        df=pd.DataFrame(data.values(), columns=['combined'])
-            
+
+    if st.button("Predict Category Area and Topics"): 
+        df = pd.read_csv(upload_file)
+        cols = ['Title','Summary','Change']
+        df['combined'] = df[cols].apply(lambda row: ' '.join(row.values.astype(str)),axis=1)
+      
         features_list = df['combined']  
-        prediction = model.predict(features_list)
-    
-        output = prediction[0]
+        predictions = model.predict(features_list)
+        df['Predicted Category'] = predictions
 
-        st.success('Predicted Category is {}'.format(output))
+        
 
-    if st.button("Predict Area"): 
-        data = {'combined':combined_text}
-        df=pd.DataFrame(data.values(), columns=['combined'])
+    # if st.button("Predict Area"): 
+    #     data = {'combined':combined_text}
+    #     df=pd.DataFrame(data.values(), columns=['combined'])
             
-        features_list = df['combined']  
-        prediction = model_a.predict(features_list)
+    #     features_list = df['combined']  
+    #     prediction = model_a.predict(features_list)
     
-        output = prediction[0]
+    #     output = prediction[0]
 
-        st.success('Predicted Area is {}'.format(output))
+    #     st.success('Predicted Area is {}'.format(output))
 
 
 
